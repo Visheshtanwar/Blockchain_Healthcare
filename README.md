@@ -1,68 +1,101 @@
-# Blockchain_Healthcare
-Machine Learning methods on blockchain healthcare dataset
-===== FIRST 5 ROWS =====
-   blockchain  trust_score  data_integrity  transaction_time  fraud_incidents  \
-0           0    44.030257       69.273253          4.092353                5   
-1           1    56.096956       91.736987          3.953791                1   
-2           1    75.877793       85.059986          3.266859                4   
-3           1    89.134737       89.264036          5.698025                2   
-4           0    55.376299       69.004687         16.571447                6   
+## Blockchain Healthcare Dataset
 
-   patient_satisfaction  stakeholders  
-0              4.321855            69  
-1              5.769232            90  
-2              7.639082            37  
-3              6.875269            62  
-4              4.115032            22  
+### 1. Dataset Overview
 
-===== DATA INFO =====
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 5000 entries, 0 to 4999
-Data columns (total 7 columns):
- #   Column                Non-Null Count  Dtype  
----  ------                --------------  -----  
- 0   blockchain            5000 non-null   int64  
- 1   trust_score           5000 non-null   float64
- 2   data_integrity        5000 non-null   float64
- 3   transaction_time      5000 non-null   float64
- 4   fraud_incidents       5000 non-null   int64  
- 5   patient_satisfaction  5000 non-null   float64
- 6   stakeholders          5000 non-null   int64  
-dtypes: float64(4), int64(3)
-memory usage: 273.6 KB
-None
+The **Blockchain Healthcare Dataset** is a structured dataset designed to support the application and evaluation of Machine Learning (ML) techniques in blockchain-enabled healthcare systems. It contains 5,000 records and 7 features representing blockchain adoption, trust, data integrity, transaction performance, fraud incidents, patient satisfaction, and stakeholder participation.
 
-===== DATA SHAPE =====
-(5000, 7)
+The dataset can be used to investigate relationships between blockchain implementation and important healthcare system performance indicators.
 
-===== MISSING VALUES =====
-blockchain              0
-trust_score             0
-data_integrity          0
-transaction_time        0
-fraud_incidents         0
-patient_satisfaction    0
-stakeholders            0
-dtype: int64
+### 2. Dataset Specifications
 
-===== STATISTICAL SUMMARY =====
-       blockchain  trust_score  data_integrity  transaction_time  \
-count  5000.00000  5000.000000     5000.000000       5000.000000   
-mean      0.50000    64.815667       80.011753          7.535548   
-std       0.50005    17.978197       11.105132          3.211853   
-min       0.00000    11.633445       53.122104         -2.270400   
-25%       0.00000    49.797858       70.031380          5.009847   
-50%       0.50000    64.704095       79.926670          7.535405   
-75%       1.00000    79.835179       90.035382         10.034386   
-max       1.00000   115.290552      106.420591         18.958169   
+| Property | Description |
+|---|---|
+| Dataset Name | Blockchain Healthcare |
+| Total Records | 5,000 |
+| Total Features | 7 |
+| Missing Values | 0 |
+| Data Format | Structured Tabular Data |
+| Numerical Features | 7 |
+| Categorical Features | 0 (blockchain is binary encoded) |
+| Target Variable | Blockchain (binary classification, if selected) |
 
-       fraud_incidents  patient_satisfaction  stakeholders  
-count      5000.000000           5000.000000   5000.000000  
-mean          3.977200              6.483218     52.131200  
-std           2.237606              1.822377     27.713838  
-min           1.000000              1.546646      5.000000  
-25%           2.000000              4.954289     28.000000  
-50%           5.000000              6.468061     52.000000  
-75%           6.000000              8.003390     76.000000  
-max          11.000000             11.354573     99.000000  
+### 3. Feature Description
+
+| Feature | Data Type | Description |
+|---|---|---|
+| `blockchain` | Integer | Indicates blockchain adoption (0 = No, 1 = Yes). |
+| `trust_score` | Float | Represents the trust level within the healthcare system. |
+| `data_integrity` | Float | Measures the integrity and reliability of healthcare data. |
+| `transaction_time` | Float | Represents the time required to process transactions. |
+| `fraud_incidents` | Integer | Number of reported fraud incidents. |
+| `patient_satisfaction` | Float | Represents the patient satisfaction score. |
+| `stakeholders` | Integer | Number of stakeholders participating in the healthcare system. |
+
+### 4. Sample Dataset (First Five Records)
+
+| Blockchain | Trust Score | Data Integrity | Transaction Time | Fraud Incidents | Patient Satisfaction | Stakeholders |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0 | 44.03 | 69.27 | 4.09 | 5 | 4.32 | 69 |
+| 1 | 56.10 | 91.74 | 3.95 | 1 | 5.77 | 90 |
+| 1 | 75.88 | 85.06 | 3.27 | 4 | 7.64 | 37 |
+| 1 | 89.13 | 89.26 | 5.70 | 2 | 6.88 | 62 |
+| 0 | 55.38 | 69.00 | 16.57 | 6 | 4.12 | 22 |
+
+### 5. Descriptive Statistical Analysis
+
+The following table presents the descriptive statistics of the dataset.
+
+| Statistic | Blockchain | Trust Score | Data Integrity | Transaction Time | Fraud Incidents | Patient Satisfaction | Stakeholders |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Mean | 0.50 | 64.82 | 80.01 | 7.54 | 3.98 | 6.48 | 52.13 |
+| Std. Dev. | 0.50 | 17.98 | 11.11 | 3.21 | 2.24 | 1.82 | 27.71 |
+| Minimum | 0 | 11.63 | 53.12 | -2.27 | 1 | 1.55 | 5 |
+| 25% | 0 | 49.80 | 70.03 | 5.01 | 2 | 4.95 | 28 |
+| Median | 0.50 | 64.70 | 79.93 | 7.54 | 5 | 6.47 | 52 |
+| 75% | 1 | 79.84 | 90.04 | 10.03 | 6 | 8.00 | 76 |
+| Maximum | 1 | 115.29 | 106.42 | 18.96 | 11 | 11.35 | 99 |
+
+### 6. Data Quality and Preprocessing
+
+Initial data inspection indicates:
+
+- Total records: 5,000.
+- Total features: 7.
+- Missing values: None.
+- Duplicate records: Not yet assessed.
+- All features are stored in numerical format.
+- The `blockchain` feature is binary encoded.
+
+**Data quality consideration:** The `transaction_time` feature contains negative values, while some scores exceed their apparent conventional ranges. These observations should be investigated before model training to determine whether they represent valid measurements or synthetic data-generation artefacts.
+
+### 7. Potential Machine Learning Applications
+
+The dataset can support several ML research directions:
+
+1. **Binary Classification:** Predict blockchain adoption using healthcare system indicators.
+2. **Regression:** Predict patient satisfaction, trust scores, or transaction time.
+3. **Fraud Analysis:** Investigate patterns associated with healthcare fraud incidents.
+4. **Clustering:** Identify groups of healthcare systems based on trust, integrity, and operational performance.
+5. **Feature Importance:** Examine which indicators are most strongly associated with blockchain adoption.
+6. **Comparative Analysis:** Compare healthcare system indicators between blockchain and non-blockchain observations.
+
+### 8. Machine Learning Algorithms
+
+Potential algorithms for experimentation include:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
+- XGBoost
+- LightGBM
+- Gradient Boosting
+- Artificial Neural Networks (ANN)
+
+### 9. Research Scope
+
+This dataset provides an opportunity to explore how machine learning can be applied to blockchain-enabled healthcare environments. The analysis can focus on blockchain adoption, healthcare data integrity, trust, fraud-related indicators, transaction efficiency, and patient satisfaction.
+
+**Note:** The dataset contains observational records. Predictive associations should not be interpreted as evidence of causal effects of blockchain technology.
 
