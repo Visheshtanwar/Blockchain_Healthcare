@@ -96,25 +96,94 @@ Potential algorithms for experimentation include:
 ### 9. Research Scope
 
 This dataset provides an opportunity to explore how machine learning can be applied to blockchain-enabled healthcare environments. The analysis can focus on blockchain adoption, healthcare data integrity, trust, fraud-related indicators, transaction efficiency, and patient satisfaction.
+## 10. Machine Learning Experimental Results
+
+### 10.1 Experimental Setup
+
+Six machine learning algorithms were implemented and evaluated to investigate their performance in predicting blockchain adoption in healthcare systems.
+
+The dataset was divided into training and testing subsets using an 80:20 split.
+
+| Parameter | Value |
+|---|---|
+| Total Samples | 5,000 |
+| Input Features | 6 |
+| Training Samples | 4,000 |
+| Testing Samples | 1,000 |
+| Training Percentage | 80% |
+| Testing Percentage | 20% |
+| Number of Classes | 2 |
+| Evaluation Strategy | Cross-validation and independent test evaluation |
+
+**Evaluated Machine Learning Algorithms:**
+
+1. Logistic Regression
+2. Random Forest
+3. XGBoost
+4. Support Vector Machine (SVM)
+5. K-Nearest Neighbors (KNN)
+6. Gradient Boosting
+
+### 10.2 Cross-Validation Results
+
+The models were evaluated using cross-validation to assess their performance and consistency across different data partitions.
+
+| Machine Learning Model | Accuracy (Mean ± Std.) | ROC-AUC (Mean ± Std.) |
+|---|---:|---:|
+| Logistic Regression | 99.55 ± 0.19% | 0.9996 ± 0.0004 |
+| Random Forest | 99.18 ± 0.35% | 0.9990 ± 0.0009 |
+| XGBoost | 99.30 ± 0.49% | 0.9991 ± 0.0008 |
+| SVM | 99.35 ± 0.24% | 0.9994 ± 0.0006 |
+| KNN | 99.00 ± 0.29% | 0.9965 ± 0.0021 |
+| Gradient Boosting | 99.02 ± 0.52% | 0.9992 ± 0.0006 |
+
+**Observation:** Logistic Regression achieved the highest mean cross-validation accuracy (99.55%) and ROC-AUC (0.9996), demonstrating strong classification performance during cross-validation.
+
+### 10.3 Final Test Set Performance
+
+All six models were subsequently evaluated on the independent test set containing 1,000 samples.
+
+| Model | Accuracy (%) | Precision (%) | Recall (%) | F1-Score (%) | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 98.70 | 98.70 | 98.70 | 98.70 | 0.9997 |
+| Random Forest | 99.10 | 99.10 | 99.10 | 99.10 | 0.9997 |
+| XGBoost | 98.70 | 98.71 | 98.70 | 98.70 | 0.9995 |
+| SVM | 98.60 | 98.60 | 98.60 | 98.60 | 0.9995 |
+| KNN | 98.70 | 98.70 | 98.70 | 98.70 | 0.9936 |
+| Gradient Boosting | 99.00 | 99.01 | 99.00 | 99.00 | 0.9995 |
+
+*Note: Precision, recall, and F1-score are macro-averaged values.*
+
+### 10.4 Final Model Ranking
+
+Models were ranked according to their ROC-AUC performance on the independent test set.
+
+| Rank | Model | Test ROC-AUC |
+|---:|---|---:|
+| 1 | Logistic Regression | 0.999700 |
+| 2 | Random Forest | 0.999652 |
+| 3 | Gradient Boosting | 0.999520 |
+| 4 | SVM | 0.999460 |
+| 5 | XGBoost | 0.999456 |
+| 6 | KNN | 0.993594 |
+
+### 10.5 Key Findings
+
+- **Logistic Regression:** Achieved the highest test ROC-AUC of 0.9997 and the highest cross-validation accuracy of 99.55%.
+- **Random Forest:** Achieved the highest independent test accuracy of 99.10%, with a ROC-AUC of approximately 0.9997.
+- **Gradient Boosting:** Delivered the second-highest test accuracy of 99.00%.
+- **SVM:** Demonstrated consistent classification performance with 98.60% test accuracy.
+- **XGBoost:** Achieved 98.70% test accuracy and a ROC-AUC of 0.9995.
+- **KNN:** Achieved 98.70% test accuracy, although its ROC-AUC was comparatively lower at 0.9936.
+
+### 10.6 Conclusion
+
+The experimental findings demonstrate that all six evaluated machine learning algorithms achieved strong classification performance on the Blockchain Healthcare Dataset.
+
+Random Forest obtained the highest test accuracy (99.10%), whereas Logistic Regression achieved the highest test ROC-AUC (0.9997) and cross-validation accuracy (99.55%).
+
+These results provide a comparative baseline for machine learning-based blockchain adoption prediction in healthcare environments.
+
+**Important:** The reported performance reflects prediction of the selected target variable (`blockchain`) and should not be interpreted as direct evidence that blockchain improves healthcare outcomes.
 
 **Note:** The dataset contains observational records. Predictive associations should not be interpreted as evidence of causal effects of blockchain technology.
-
-## 11. Data Visualization and Experimental Analysis
-
-### Feature Correlation Heatmap
-![Correlation Heatmap](images/correlation_heatmap.png)
-
-### Model Accuracy Comparison
-![Model Accuracy](images/model_accuracy.png)
-
-### ROC Curve Comparison
-![ROC Curves](images/roc_curves.png)
-
-### Confusion Matrix Analysis
-![Confusion Matrices](images/confusion_matrices.png)
-
-### Cross-Validation Performance
-![Cross Validation](images/cross_validation.png)
-
-### Feature Importance
-![Feature Importance](images/feature_importance.png)
