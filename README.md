@@ -99,3 +99,22 @@ This dataset provides an opportunity to explore how machine learning can be appl
 
 **Note:** The dataset contains observational records. Predictive associations should not be interpreted as evidence of causal effects of blockchain technology.
 
+## 11. Data Visualization and Experimental Analysis
+
+### Feature Correlation Heatmap
+![Correlation Heatmap](images/correlation_heatmap.png)
+
+### Model Accuracy Comparison
+![Model Accuracy](images/model_accuracy.png)
+
+### ROC Curve Comparison
+![ROC Curves](images/roc_curves.png)
+
+### Confusion Matrix Analysis
+![Confusion Matrices](images/confusion_matrices.png)
+
+### Cross-Validation Performance
+![Cross Validation](images/cross_validation.png)
+
+### Feature Importance
+![Feature Importance](images/feature_importance.png)
